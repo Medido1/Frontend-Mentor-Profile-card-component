@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  /* ## Colors */
+
+  /* ### Primary */
+
+  --Dark_cyan: hsl(185, 75%, 39%);
+  --Very_dark_desaturated_blue: hsl(229, 23%, 23%);
+  --Dark_grayish_blue: hsl(227, 10%, 46%);
+
+  /* ### Neutral */
+
+  --Dark_gray: hsl(0, 0%, 59%);
+
+  /* font */
+
+  --font: 'Kumbh Sans', sans-serif;
+  --font-size: 18px; /* name and stats */
+  --regular: 400;
+  --bold: 700;
+}
+
+/* css reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/* document styling */
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Dark_cyan);
+  background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: -350px -350px, 150px 350px;
+}
+
+.container {
+  background-color: white;
+  height: 350px;
+  width: 350px;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  font-family: var(--font);
+  font-size: var(--font-size);
+  font-weight: var(--regular);
+  color: var(--Very_dark_desaturated_blue);
+}
+
+.profile_info {
+  position: relative;
+  height: 75%;
+  background-image: url(./images/bg-pattern-card.svg);
+  background-repeat: no-repeat;
+  background-size: 100% 50%;
+  border-bottom: 1px solid var(--Dark_gray);
+}
+
+.profile {
+  position: absolute;
+  top: 62%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  align-items: center;
+}
+
+.profile_img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid white;
+  margin-bottom: .5rem;
+}
+
+.nameAndAge {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-size: var(--font-size);
+}
+
+.name {
+  font-size: inherit;
+}
+
+.age,
+.city {
+  color: var(--Dark_grayish_blue);
+}
+
+.city {
+  font-size: 1rem;
+}
+
+.stats_container {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 1.5rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat_header {
+  font-size: var(--font-size);
+}
+
+.stat p {
+  font-size: .825rem;
+  color: var(--Dark_gray);
+}
+
+@media (min-width: 500px){
+  body {
+    background-image: url(./images/bg-pattern-top.svg), url(./images/bg-pattern-bottom.svg);
+    background-position: -650px -850px, 500px 360px;
+
+  }
+}
